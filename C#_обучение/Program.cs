@@ -22,8 +22,19 @@
 //*Console.Write(username); // выводит содержание переменной username
 
 // складываем числа
-int numberA = 21; // обязательно перед началом переменной назначить тип строки 
+//*int numberA = 21; // обязательно перед началом переменной назначить тип строки 
 // - ( в данном типе int - числовой тип)
-int numberB = 5; // допускается писать переменные заглавными и строчными буквами.
-int resault = numberA + numberB;
-Console.WriteLine(resault);
+//*int numberB = 5; // допускается писать переменные заглавными и строчными буквами.
+//*int resault = numberA + numberB;
+//*Console.WriteLine(resault);
+
+// деление числа 
+//*int numberA = 13; // Если перед переменной задать тип данных int - то деление буде целочисленным
+//*int numberB = 3;
+//*int run = numberA / numberB;
+//*Console.WriteLine(run);
+
+//*double numberC = 13; // Для раделения с плавующей точкой используется тип данных double
+//*double numberG = 3;
+//*double runB = numberC / numberG;
+//*Console.WriteLine(runB);
