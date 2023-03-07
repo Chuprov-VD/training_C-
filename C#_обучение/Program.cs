@@ -1,11 +1,20 @@
 ﻿// Вывод через консоль приветствие Console - обращение к консоле; 
 //.WriteLin - команда для печати на экран
-//Console.WriteLine("Hello, World!"); 
+//*Console.WriteLine("Hello, World!"); 
 
 // Просьба ввести данные у пользователя и поприветствовать его
-Console.WriteLine("Введите Ваше имя");
+//*Console.WriteLine("Введите Ваше имя");
+// string - тип данных (строка) добавляется перед переменной
+//*string username = Console.ReadLine();
+// username - имя пользователя; Console - обращение к консоле; .Readline - команда для ввода данных
+//*Console.WriteLine("Привет, "); // выводит - Привет, 
+//*Console.WriteLine(username); // выводит содержание переменной username
+
+// Write - позволяет ввыводить на экран текс в одну строку, предыдущая команда WriteLine 
+// - печатала текст и далее следующая команда выводилась на следующей строке
+Console.Write("Введите Ваше имя ");
 // string - тип данных (строка) добавляется перед переменной
 string username = Console.ReadLine();
 // username - имя пользователя; Console - обращение к консоле; .Readline - команда для ввода данных
-Console.WriteLine("Привет, "); // выводит - Привет, 
-Console.WriteLine(username); // выводит содержание переменной username
+Console.Write("Привет, "); // выводит - Привет, 
+Console.Write(username); // выводит содержание переменной username
