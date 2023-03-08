@@ -43,3 +43,16 @@
 //*int num = new Random().Next(1, 1000); // переменной num с типом данных int присвается случайное - 
 // - значение от 1 до 1000
 //*Console.WriteLine(num); // вывод полученного числа
+
+// 7. Цикл (if, else)
+//*Console.WriteLine("Привет, введи пожалуйсто свое имя: ");
+//*string username = Console.ReadLine();
+//*if (username.ToLower == "маша") // каждое услови е цикла нужно выделить { } так, .ToLower - 
+// -  преобразует значение к нижнему регистру 
+//*{
+//*    Console.WriteLine("Привет, МАША, УРА!");
+//*}
+//*else
+//*{
+//*    Console.WriteLine("Привет");
+//*}
