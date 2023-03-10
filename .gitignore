@@ -1,5 +1,6 @@
 .vscode
 bin
 obj
-C#_обучение.csproj
+C#_обучение.csproj 
+C#seminar.csproj
 .DS_Store
