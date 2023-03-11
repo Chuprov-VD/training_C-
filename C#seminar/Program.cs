@@ -4,6 +4,30 @@
 //Console.Write("Введите 2 число: ");
 //int b = Convert.ToInt32(Console.ReadLine());
 //int max = a;
+//int min = b
+//if (max > min)
+//{
+//  max = a;
+//  min = b;
+//}
+//if (max < min)
+//{
+//  max = b;
+//  min = a
+//}
+//Console.Write("Максимум = ");
+//Console.WriteLine(max);
+//Console.Write("Минимум = ");
+//Console.WriteLine(min);
+
+// 2 задача  Напишите программу, которая принимает на вход три числа и выдаёт максимальное из этих чисел
+//Console.Write("Введите 1 число: ");
+//int a = Convert.ToInt32(Console.ReadLine()); // Convert.ToInt32 преобразует данные к нужному типу
+//Console.Write("Введите 2 число: ");
+//int b = Convert.ToInt32(Console.ReadLine());
+//Console.Write("Введите 3 число: ");
+//int c = Convert.ToInt32(Console.ReadLine());
+//int max = a;
 //if (max > b)
 //{
 //  max = a;
@@ -12,28 +36,23 @@
 //{
 //  max = b;
 //}
+//if (max < c)
+//{
+//  max = c;
+//}
 //Console.Write("Максимум = ");
 //Console.WriteLine(max);
 
-// 2 задача  Напишите программу, которая принимает на вход три числа и выдаёт максимальное из этих чисел
-Console.Write("Введите 1 число: ");
-int a = Convert.ToInt32(Console.ReadLine()); // Convert.ToInt32 преобразует данные к нужному типу
-Console.Write("Введите 2 число: ");
-int b = Convert.ToInt32(Console.ReadLine());
-Console.Write("Введите 3 число: ");
-int c = Convert.ToInt32(Console.ReadLine());
-int max = a;
-if (max > b)
+// 3 задача.  Напишите программу, которая на вход принимает число и выдаёт, -
+// - является ли число чётным (делится ли оно на два без остатка
+
+Console.Write("Введите число: ");
+double num = Convert.ToInt32(Console.ReadLine());
+num = num % 2;
+string meaning = "yes";
+if (num > 0)
 {
-    max = a;
+    meaning = "no";
 }
-if (max < b)
-{
-    max = b;
-}
-if (max < c)
-{
-    max = c;
-}
-Console.Write("Максимум = ");
-Console.WriteLine(max);
+Console.Write("Число четное? Ответ: ");
+Console.WriteLine(meaning);
