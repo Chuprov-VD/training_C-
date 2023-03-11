@@ -46,13 +46,32 @@
 // 3 задача.  Напишите программу, которая на вход принимает число и выдаёт, -
 // - является ли число чётным (делится ли оно на два без остатка
 
+//Console.Write("Введите число: ");
+//double num = Convert.ToInt32(Console.ReadLine());
+//num = num % 2;
+//string meaning = "yes"; // задаем переменной "значение" изначально да, 
+//                        // что бы уменьшить количество проверок
+//if (num > 0)
+//{
+//    meaning = "no";
+//}
+//Console.Write("Число четное? Ответ: ");
+//Console.WriteLine(meaning);
+
+// 4 задача - Напишите программу, которая на вход принимает число (N), -
+// - а на выходе показывает все чётные числа от 1 до N.
 Console.Write("Введите число: ");
 double num = Convert.ToInt32(Console.ReadLine());
-num = num % 2;
-string meaning = "yes";
-if (num > 0)
+double count = 2;
+double number = 0;
+while (count <= num)
 {
-    meaning = "no";
+    number = count % 2;
+    if (number == 0)
+    {
+        Console.Write(count);
+        Console.Write(", ");
+    }
+    count++;
+
 }
-Console.Write("Число четное? Ответ: ");
-Console.WriteLine(meaning);
