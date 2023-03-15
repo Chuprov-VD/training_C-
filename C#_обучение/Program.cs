@@ -142,55 +142,81 @@
 // 2 задача  Напишите программу, которая принимает на вход три числа и выдаёт максимальное из этих чисел
 
 //**Console.Write("Введите 1 число: ");
-int a = Convert.ToInt32(Console.ReadLine()); // Convert.ToInt32 преобразует данные к нужному типу
-Console.Write("Введите 2 число: ");
-int b = Convert.ToInt32(Console.ReadLine());
-Console.Write("Введите 3 число: ");
-int c = Convert.ToInt32(Console.ReadLine());
-int max = a;
-if (max > b)
-{
-    max = a;
-}
-if (max < b)
-{
-    max = b;
-}
-if (max < c)
-{
-    max = c;
-}
-Console.Write("Максимум = ");
-Console.WriteLine(max);
+//**int a = Convert.ToInt32(Console.ReadLine()); // Convert.ToInt32 преобразует данные к нужному типу
+//**Console.Write("Введите 2 число: ");
+//**int b = Convert.ToInt32(Console.ReadLine());
+//**Console.Write("Введите 3 число: ");
+//**int c = Convert.ToInt32(Console.ReadLine());
+//**int max = a;
+//**if (max > b)
+//**{
+//**    max = a;
+//**}
+//**if (max < b)
+//**{
+//**    max = b;
+//**}
+//**if (max < c)
+//**{
+//**    max = c;
+//**}
+//**Console.Write("Максимум = ");
+//**Console.WriteLine(max);
 
 // 3 задача.  Напишите программу, которая на вход принимает число и выдаёт, -
 // - является ли число чётным (делится ли оно на два без остатка
 
-Console.Write("Введите число: ");
-double num = Convert.ToInt32(Console.ReadLine());
-num = num % 2;
-string meaning = "yes"; // задаем переменной "значение" изначально да, 
-                        // что бы уменьшить количество проверок
-if (num > 0)
-{
-    meaning = "no";
-}
-Console.Write("Число четное? Ответ: ");
-Console.WriteLine(meaning);
+//**Console.Write("Введите число: ");
+//**double num = Convert.ToInt32(Console.ReadLine());
+//**num = num % 2;
+//**string meaning = "yes"; // задаем переменной "значение" изначально да, 
+// что бы уменьшить количество проверок
+//**if (num > 0)
+//**{
+//**    meaning = "no";
+//**}
+//**Console.Write("Число четное? Ответ: ");
+//**Console.WriteLine(meaning);
 
 // 4 задача - Напишите программу, которая на вход принимает число (N), -
 // - а на выходе показывает все чётные числа от 1 до N.
-Console.Write("Введите число: ");
-double num = Convert.ToInt32(Console.ReadLine());
-double count = 2;
-double number = 0; // промежуточная переменная
-while (count <= num)
+//**Console.Write("Введите число: ");
+//**double num = Convert.ToInt32(Console.ReadLine());
+//**double count = 2;
+//**double number = 0; // промежуточная переменная
+//**while (count <= num)
+//**{
+//**    number = count % 2;
+//**   if (number == 0)
+//**    {
+//**        Console.Write(count);
+//**        Console.Write(", ");
+//**    }
+//**    count++;
+//**}
+
+//11. Поиск максимума с помощью метода
+int Max(int arg1, int arg2, int arg3) //    данный метод (название задается самостоятельно) который придуман от начала и до конца, -
+// - берет три производных числа и ищет максимум int arg - (условная переменная, в которую можно положить любое значение)
 {
-    number = count % 2;
-    if (number == 0)
-    {
-        Console.Write(count);
-        Console.Write(", ");
-    }
-    count++;
+    int resault = arg1; // resault - переменная результат, которой присваевается 1 значение
+    if (arg2 > resault) resault = arg2; // сравнение 2 переменной с 1-ой если 2 > 1, то resault присваевается 2 переменная
+    if (arg3 > resault) resault = arg3; // сравнение 3 с resault
+    return resault; // возвращает результат
 }
+int a1 = 1; // 1 группа
+int b1 = 5;
+int c1 = 62;
+int a2 = 12; // 2 группа
+int b2 = 532;
+int c2 = 6;
+int a3 = 14; // 3 группа
+int b3 = 4;
+int c3 = 65;
+// метод названный Max() возвращает результат примененного алгоритма выше
+int max1 = Max(a1, b1, c1); // сравнение 1 группы
+int max2 = Max(a2, b2, c2); // сравнение 2 группы
+int max3 = Max(a3, b3, c3);// сравнение 3 группы
+int max = Max(max1, max2, max3); // сравнение результатов группы
+Console.WriteLine(max); // печатает результат
+
