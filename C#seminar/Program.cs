@@ -1,78 +1,42 @@
-﻿// 1 задача Напишите программу, которая на вход принимает два числа и выдаёт, какое число большее, а какое меньшее.
-Console.Write("Введите 1 число: ");
-int a = Convert.ToInt32(Console.ReadLine()); // Convert.ToInt32 преобразует данные к нужному типу
-Console.Write("Введите 2 число: ");
-int b = Convert.ToInt32(Console.ReadLine());
-int max = a;
-int min = b;
-if (max > min)
-{
-    max = a;
-    min = b;
-}
-if (max < min)
-{
-    max = b;
-    min = a;
-}
-Console.Write("Максимум = ");
-Console.WriteLine(max);
-Console.Write("Минимум = ");
-Console.WriteLine(min);
+﻿
+//Задача 19
 
-// 2 задача  Напишите программу, которая принимает на вход три числа и выдаёт максимальное из этих чисел
+//Напишите программу, которая принимает на вход пятизначное число и проверяет, 
+//является ли оно палиндромом...
 
-Console.Write("Введите 1 число: ");
-int a = Convert.ToInt32(Console.ReadLine()); // Convert.ToInt32 преобразует данные к нужному типу
-Console.Write("Введите 2 число: ");
-int b = Convert.ToInt32(Console.ReadLine());
-Console.Write("Введите 3 число: ");
-int c = Convert.ToInt32(Console.ReadLine());
-int max = a;
-if (max > b)
-{
-    max = a;
-}
-if (max < b)
-{
-    max = b;
-}
-if (max < c)
-{
-    max = c;
-}
-Console.Write("Максимум = ");
-Console.WriteLine(max);
-
-// 3 задача.  Напишите программу, которая на вход принимает число и выдаёт, -
-// - является ли число чётным (делится ли оно на два без остатка
-
+Console.Clear();
 Console.Write("Введите число: ");
-double num = Convert.ToInt32(Console.ReadLine());
-num = num % 2;
-string meaning = "yes"; // задаем переменной "значение" изначально да, 
-                        // что бы уменьшить количество проверок
-if (num > 0)
+string num = Console.ReadLine();
+int f = num.Length;
+int count = -1;
+int i = -1;
+while (i < f)
 {
-    meaning = "no";
-}
-Console.Write("Число четное? Ответ: ");
-Console.WriteLine(meaning);
-
-// 4 задача - Напишите программу, которая на вход принимает число (N), -
-// - а на выходе показывает все чётные числа от 1 до N.
-Console.Write("Введите число: ");
-double num = Convert.ToInt32(Console.ReadLine());
-double count = 2;
-double number = 0; // промежуточная переменная
-while (count <= num)
-{
-    number = count % 2;
-    if (number == 0)
+    f = f - 1;
+    i++;
+    if (num[i] == num[f])
     {
-        Console.Write(count);
-        Console.Write(", ");
+        count++;
     }
-    count++;
-
 }
+if (count == num.Length / 2)
+{
+    Console.Write("Да, число является палиндромом ");
+}
+else
+{
+    Console.WriteLine("Нет, число не является палидромом ");
+}
+//
+
+//Задача 21
+//Напишите программу, которая принимает на 
+//вход координаты двух точек и находит расстояние между ними в 3D пространстве.
+
+//Задача 23
+//Напишите программу, которая принимает на вход число (N) и выдаёт таблицу кубов чисел от 1 до N.
+Console.Clear();
+Console.Write("Введите число: ");
+int num = Convert.ToInt32(Console.ReadLine());
+for (int i = 1; i <= num; i++)
+    Console.Write($"{Math.Pow(i, 3)} ");
