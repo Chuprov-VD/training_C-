@@ -426,21 +426,198 @@
 // 34, 5 -> не кратно, остаток 4
 // 16, 4 -> кратно
 
-Console.Clear();
-Console.WriteLine($"Введите 1 число: ");
-string num1 = Console.ReadLine(); // вводим сначала число в формате строки
-double number1 = Convert.ToDouble(num1);// преобразуем строку в вещественное число
-Console.WriteLine($"Введите 2 число: ");
-string num2 = Console.ReadLine();
-double number2 = Convert.ToDouble(num2);
-double resault = number1 / number2;
-double num3 = resault * 10 % 10; // выводим остаток от деления, в целое число
-Console.WriteLine($"Число после деления: {resault}");
-if (num3 > 0)
-{
-    Console.WriteLine($"Число не кратно, остаток {num3}");
-}
-else
-{
-    Console.WriteLine($"Число кратно");
-}
+// Первое решение (не правильно, но интересно)
+//Console.Clear();
+//Console.WriteLine($"Введите 1 число: ");
+//string num1 = Console.ReadLine(); // вводим сначала число в формате строки
+//double number1 = Convert.ToDouble(num1);// преобразуем строку в вещественное число
+//Console.WriteLine($"Введите 2 число: ");
+//string num2 = Console.ReadLine();// вводим сначала число в формате строки
+//double number2 = Convert.ToDouble(num2);// преобразуем строку в вещественное число
+//double resault = number1 / number2;
+//double num3 = resault * 10 % 10; // выводим остаток от деления, в целое число
+//Console.WriteLine($"Число после деления: {resault}");
+//if (num3 > 0)
+//{
+//    Console.WriteLine($"Число не кратно, после 0 число = {num3}");
+//}
+//else
+//{
+//    Console.WriteLine($"Число кратно");
+//}
+
+// Правильно и проще
+
+//Console.Clear();
+//Console.WriteLine($"Введите 1 число: ");
+//int num1 = Convert.ToInt32(Console.ReadLine());
+//Console.WriteLine($"Введите 2 число: ");
+//int num2 = Convert.ToInt32(Console.ReadLine());
+//if (num1 % num2 == 0)
+//    Console.WriteLine($"Число кратно ");
+//else
+//    Console.WriteLine($"Число не кратно, остаток = {num1 % num2} ");
+
+// 15.67 Напишите программу, которая принимает на вход число и проверяет, кратно ли оно одновременно
+//7 и 23.
+
+//14 -> нет
+//46 -> нет
+//161 -> да
+
+//Console.Clear();
+//Console.WriteLine($"Введите число: ");
+//int num = Convert.ToInt32(Console.ReadLine());
+//if (num % 7 == 0 && num % 23 == 0) // && - оператор and(оба условия должны выполняться)
+//{
+//    Console.WriteLine($"ДА! Число делется на 7 и 23 без остатка ");
+//}
+//else/
+//{
+//    Console.WriteLine($"НЕТ! Число не делется на 7 и 23 без остатка ");
+//}
+
+// 15.68
+
+//Напишите программу, которая принимает на вход два числа и проверяет, является ли 
+//одно число квадратом другого.
+
+//5, 25 -> да
+//-4, 16 -> да
+//25, 5 -> да
+//8,9 -> нет
+
+//Console.Clear();
+//Console.WriteLine($"Введите число 1: ");
+//int num1 = Convert.ToInt32(Console.ReadLine());
+//Console.WriteLine($"Введите число 2: ");
+//int num2 = Convert.ToInt32(Console.ReadLine());
+//if (num1 % num2 == 0)/
+//{
+//    Console.WriteLine($"{num1} является квадратом числа {num2}");
+//}
+//else if (num2 % num1 == 0)
+//{
+//    Console.WriteLine($"{num2} является квадратом числа {num1}");
+//}
+//else
+//{
+//    Console.WriteLine($"Ни одно из чисел не является квадратом другого");
+//}
+
+
+// 3 семинар
+//Задача №17. Напишите программу, которая принимает на вход координаты точки (X и Y),
+// причем X ≠ 0 и Y ≠ 0 и выдаёт номер четверти плоскости, в которой находится эта точка.
+
+
+//Console.Clear();
+//Console.WriteLine($"Введите число нужной координаты: ");
+//int x = Convert.ToInt32(Console.ReadLine());
+//Console.WriteLine($"Введите число y: ");
+//int y = Convert.ToInt32(Console.ReadLine());
+//if (x > 0 && y > 0)
+//{
+//    Console.WriteLine($"1");
+//}
+//else if (x < 0 && y > 0)
+//{
+//    Console.WriteLine($"2");
+//}
+//else if (x < 0 && y < 0)
+//{
+//    Console.WriteLine($"3");
+//}
+//else if (x > 0 && y < 0)
+//{
+//    Console.WriteLine($"4");
+//}
+
+//21. Напишите программу, которая принимает на вход координаты двух 
+//точек и находит расстояние между ними в 2D пространстве.
+
+//A (3,6); B (2,1) -> 5,09
+//A (7,-5); B (1,-1) -> 7,21
+//Math.Sqrt() // извлечение корня
+//Math.Pow(,) // возведение в степень
+
+//Console.Clear();
+//Console.WriteLine($"Введите 1 число координаты A: ");
+
+//double a1 = Convert.ToDouble(Console.ReadLine());
+//Console.WriteLine($"Введите 2 число координаты A: ");
+
+//double b1 = Convert.ToDouble(Console.ReadLine());
+//Console.WriteLine($"Введите 1 число координаты B: ");
+
+//double a2 = Convert.ToDouble(Console.ReadLine());
+//Console.WriteLine($"Введите 2 число координаты B: ");
+
+//double b2 = Convert.ToDouble(Console.ReadLine());
+
+//double coordinate = Math.Sqrt(Math.Pow(a1 - a2, 2) + Math.Pow(b1 - b2, 2)); // теорема пифагора
+//Console.WriteLine($"Координаты точек равны: {coordinate} ");
+
+//22.Напишите программу, которая принимает на вход число (N) и выдаёт таблицу квадратов чисел
+//от 1 до N.
+
+//5 -> 1, 4, 9, 16, 25.
+//2 -> 1,4
+
+//Console.Clear();
+//Console.WriteLine($"Введите n число для таблицы квадратов: ");
+//int num = Convert.ToInt32(Console.ReadLine());
+//for (int i = 1; i <= num; i++)
+//{
+//    Console.Write($"{Math.Pow(i, 2)} ");
+//}
+// *Задача 13:** Напишите программу, которая выводит третью
+// цифру заданного числа или сообщает, что третьей цифры нет.
+
+// 645 -> 5
+// 78 -> третьей цифры нет
+// 32679 -> 6
+
+
+//Console.Clear();
+//Console.Write($"Введите число: ");
+//string num = Console.ReadLine();
+
+//if (num.Length > 2)
+//{
+//    Console.WriteLine($"Третья цифра = {num[2]}");
+//}
+//else
+//{
+//    Console.WriteLine($"третьей цифры нет");
+//}
+
+// второе решение задачи
+
+//Console.Clear();
+//int n = Convert.ToInt32(Console.ReadLine());
+//if (n < 100)
+//    Console.WriteLine("fail");
+
+//else
+//{
+//    while (n > 1000)
+//        n = n / 10;
+//    Console.WriteLine(n % 10);
+//}
+
+// Задача 24: Напишите программу, которая принимает на вход число (А) и выдаёт сумму чисел 
+//от 1 до А.
+//7 -> 28
+//4 -> 10
+//8 -> 36
+
+//Console.Clear();
+//Console.Write($"Введите число: ");
+//int n = Convert.ToInt32(Console.ReadLine());
+//int summa = 0;
+//for (int i = 1; i <= n; i++)
+//{
+//    summa = summa + i;
+//}
+//Console.WriteLine($"сумма чисел от 1 до {n} равна: {summa}");
