@@ -612,6 +612,7 @@
 //4 -> 10
 //8 -> 36
 
+// решение с помощью цикла for
 //Console.Clear();
 //Console.Write($"Введите число: ");
 //int n = Convert.ToInt32(Console.ReadLine());
@@ -621,3 +622,80 @@
 //    summa = summa + i;
 //}
 //Console.WriteLine($"сумма чисел от 1 до {n} равна: {summa}");
+
+// решение с помощью метода
+
+//Console.Clear();
+//Console.Write($"Введите число: ");
+//double num = Convert.ToDouble(Console.ReadLine());
+//double Progression(double x)
+//{
+//    return (1 + x) / 2 * x; // формула арифмитической прогрессии
+//}
+//Console.WriteLine($"сумма чисел от 1 до {num} равна: {Progression(num)} ");
+
+// Задача 26: Напишите программу, которая принимает на вход число и 
+//выдаёт количество цифр в числе.
+//456 -> 3
+//78 -> 2
+//89126 -> 5
+
+//Console.Clear();
+//Console.Write($"Введите число: ");
+//int num = Convert.ToInt32(Console.ReadLine());
+//int f(int x) // подключаем метод
+//{
+//    int count = 0;
+//    while (num > 0)
+//    {
+//        num = num / 10; // убираем последнюю цифру
+//        count++;
+//    }
+//    return count; // возвращаем значение счетчика
+//}
+//Console.WriteLine($"Цифр в числе = {f(num)}"); //используем функцию c именем "f"
+
+// Задача 28: Напишите программу, которая принимает на вход число N и 
+//выдаёт произведение чисел от 1 до N.
+//4 -> 24
+//5 -> 120
+
+//Console.Clear();
+//Console.Write($"Введите число из которого нужно найти факториал: ");
+//int num = Convert.ToInt32(Console.ReadLine());
+//int f(int x)
+//{
+//    int factoryal = 1;
+//    if (x == 0)
+//    {
+//        return 1;
+//    }
+//    else
+//    {
+//        for (int i = 1; i <= x; i++)
+//        {
+//            factoryal = factoryal * i;
+//        }
+//        return factoryal;
+//    }
+//}
+//Console.WriteLine($"факториал равен: {f(num)}");
+
+// Задача 30: Напишите программу, которая выводит массив из 8 элементов, заполненный 
+//нулями и единицами в случайном порядке.
+//[1,0,1,1,0,1,0,0]
+
+void InputArray(int[] array) // процедура void
+{
+    for (int i = 0; i < array.Length; i++)
+    {
+        array[i] = new Random().Next(0, 2);
+    }
+}
+
+Console.Clear();
+Console.Write($"Введите число из мфссив которого нужно сгенерировать: ");
+int number = Convert.ToInt32(Console.ReadLine());
+int[] array = new int[number];
+InputArray(array); // вызов метода
+Console.WriteLine($"{string.Join(", ", (array))}");
