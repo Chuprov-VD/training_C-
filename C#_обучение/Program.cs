@@ -784,3 +784,130 @@
 //double min = 100;
 //InputArray(array, ref max, ref min); // вызов метода + ссылка на счет(на массив ссылку можно не добовлять)
 //Console.WriteLine($"[{string.Join(" ", (array))}] -> {max - min}");
+
+// 3 лекция "методы"
+
+//Вид 1 (ни чего не принимают)
+//void Method1()
+//{
+//    Console.WriteLine("Автор метода"); // тело метода
+//}
+//Method1(); // вызов метода
+
+// Вид 2(ни чего нее возвращают, но принимают)
+//void Method2(string msq)
+//{
+//    Console.WriteLine(msq);
+//}
+//Method2(msq: "Текст сообщения");// вызов метода + 
+//расшифровка аргумета через (:) (нужно когда несколько аргументов)
+//Console.Clear();
+//void Method21(string msq, int count)
+//{
+//    int i = 0;
+//    while (i < count)
+//    {
+//        Console.WriteLine(msq);
+//        i++;
+//    }
+//}
+// Method21(msq: "Текст сообщения", count: 4);
+
+// Вид 3 
+//int Method3()
+//{
+//    return DateTime.Now.Year; // return возвращает полученое значение и прерывает метод
+//}
+
+//int year = Method3();
+//Console.WriteLine(year);
+
+// Вид 4
+//string Method4(int count, string text)
+//{
+//    int i = 0;
+//    string result = String.Empty; // присваеваем значение пустой строки (более правильно)/ вместо "" 
+//    // for (int i = 0; i < count; i++) // цикл
+//    while (i < count)
+//    {
+//        result = result + text;
+//        i++;
+//    }
+//    return result;
+//}
+
+//string res = Method4(10, "z");
+//Console.WriteLine(res);
+
+//Console.Clear();
+//for (int i = 2; i <= 10; i++)
+//{
+//    for (int s = 1; s <= 10; s++)
+//    {
+//        Console.Write($"{i} x {s} = {i * s}; ");
+//    }
+//    Console.WriteLine(" ");
+//}
+
+// ==== Работа с текстом 
+// Дан текст. В тексте нужно все пробелы заменить черточкамиб 
+// маленькие буквы "к" заменить большими "К", 
+// а большие "С" заменить маленькими "с".
+
+//string TextIndex(string text, char oldValue, char newValue)
+//{
+//    string newText = String.Empty;
+
+//    for (int i = 0; i < text.Length; i++)
+//    {
+
+//        if (text[i] == oldValue)
+//        {
+//            newText = newText + newValue;
+//        }
+//        else
+//        {
+//            newText = newText + text[i];
+//        }
+//    }
+//    return newText;
+//}
+
+
+//string text = "- Я думаю, - сказал князь, улыбаясь, - что, "
+//            + "ежели бы вас послали вместо нашего милого Винценгероде,"
+//            + "вы бы взяли приступом согласие прусского короля. "
+//            + "Вы так красноречивы. Вы дадите мне чаю?";
+
+//string newText = TextIndex(text, ' ', '|'); // первый раз меняем текс (при char используем одинарные кавычки)
+//string newText1 = TextIndex(newText, 'к', 'К'); // второй раз меняем
+//string newText2 = TextIndex(newText1, 'с', 'С'); // третий раз меняем
+//Console.WriteLine(newText2);
+
+// упорядочивание массива
+//Console.Clear();
+//void PrintArry(int[] arr) // используем массив в методе void
+//{
+//    int count = arr.Length; // присваеваем переменой count количество элементов в массиве
+//    for (int i = 0; i < count; i++)
+//    {
+//        for (int j = i + 1; j < count; j++)
+//        {
+//            if (arr[i] >= arr[j])
+//            {
+//                int tempery = arr[i]; // используем промежуточную переменную для присваевания
+//                arr[i] = arr[j];
+//                arr[j] = tempery;
+//            }
+//        }
+//    }
+//    for (int i = 0; i < arr.Length; i++)
+//    {
+//        Console.Write($"{arr[i]} ");
+//    }
+//}
+
+
+//int[] arr = { 2, 5, 3, 4, 5, 1, 6, 14, 10, 4, 3 };
+//PrintArry(arr);
+
