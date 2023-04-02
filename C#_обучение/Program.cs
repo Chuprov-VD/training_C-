@@ -911,3 +911,141 @@
 //int[] arr = { 2, 5, 3, 4, 5, 1, 6, 14, 10, 4, 3 };
 //PrintArry(arr);
 
+// семинар 
+
+//  Задача 31: Задайте массив из 12 элементов, заполненный случайными числами из промежутка [-9, 9]. 
+//  Найдите сумму отрицательных и положительных элементов массива.
+//  Например, в массиве [3,9,-8,1,0,-7,2,-1,8,-3,-1,6] сумма положительных чисел равна 29, 
+//  сумма отрицательных равна -20.
+
+//Console.Clear(); // очищаем консоль
+//void SumArray(int[] array) // процедура которая принимает массив
+//{
+//    int positiveNum = 0; // положительные числа
+//    int negativeNum = 0; // отрицательные числа
+//    for (int i = 0; i < array.Length; i++) //
+//    {
+//        array[i] = new Random().Next(-9, 10);// генерируем случайные числа, и добавляем в массив
+//        // печатаем каждое полученное число
+//        if (array[i] > 0)//
+//        {
+//            positiveNum = array[i] + positiveNum;//
+//        }
+//        else
+//        {
+//            negativeNum = array[i] + negativeNum;//
+//        }
+//    }
+//    Console.WriteLine();
+//    Console.Write($"[{string.Join(", ", array)}]"); // выводим массив через .Join
+//    Console.WriteLine($"Сумма положительных чисел {positiveNum}");
+//    Console.WriteLine($"Сумма отрицательных чисел {negativeNum}");
+
+//}
+//Console.Write($"Введите количество чисел в массиве: ");
+//int n = Convert.ToInt32(Console.ReadLine());
+//int[] arrey = new int[n]; // пустой массив с n числами
+//SumArray(arrey);
+
+// Задача 32: Напишите программу замена элементов массива:
+// положительные элементы замените на соответствующие отрицательные, и наоборот.
+// [-4, -8, 8, 2] -> [4, 8, -8, -2]
+
+// Console.Clear(); // очищаем консоль
+// void SumArray(int[] array) // процедура которая принимает массив
+// {
+//     for (int i = 0; i < array.Length; i++) //
+//     {
+//         array[i] = new Random().Next(-9, 10);// генерируем случайные числа, и добавляем в массив
+//         Console.Write($"{array[i]} "); // показываем изначальный массив
+//         array[i] = array[i] * -1; // умножаем на -1 для смены знака +/-
+//     }
+//     Console.WriteLine();
+//     Console.Write($"[{string.Join(", ", array)}]"); // выводим массив через .Join
+// }
+// Console.Write($"Введите количество чисел в массиве: ");
+// int n = Convert.ToInt32(Console.ReadLine());
+// int[] arrey = new int[n]; // пустой массив с n числами
+// SumArray(arrey);
+
+
+
+// Задача 33: Задайте массив.Напишите программу, которая определяет,
+// присутствует ли заданное число в массиве.
+// 4; массив[6, 7, 19, 345, 3]->нет
+// - 3; массив[6, 7, 19, 345, -3]->да
+
+// Console.Clear();
+
+// void SumArray(int[] array, int num) // процедура которая принимает массив
+// {
+//     int count = 0;
+//     for (int i = 0; i < array.Length; i++) //
+//     {
+//         array[i] = new Random().Next(-9, 10);// генерируем случайные числа, и добавляем в массив
+//         if (array[i] == num)
+//         {
+//             count++;
+//         }
+//     }
+//     if (count > 0)
+//     {
+//         Console.WriteLine($"Да,такое число есть, и повторяется столько раз: {count} ");
+//     }
+//     else
+//     {
+//         Console.WriteLine("нет, такого числа нет");
+//     }
+//     Console.WriteLine();
+//     Console.WriteLine($"[{string.Join(", ", array)}]"); // выводим массив через .Join
+// }
+
+// Console.Write($"Введите количество чисел в массиве: ");
+// int n = Convert.ToInt32(Console.ReadLine());
+// Console.Write($"Введите число которое хотите найти от -9 до 9: ");
+// int num = Convert.ToInt32(Console.ReadLine());
+// int[] arrey = new int[n]; // пустой массив с n числами
+// SumArray(arrey, num);
+
+// Задача со звездочкой*
+
+// Задана последовательность натуральных чисел, завершающаяся числом 0. 
+// Требуется определить значение второго по величине элемента в этой последовательности, 
+// то есть элемента, который будет наибольшим, если из последовательности удалить наибольший элемент.
+
+// Входной файл INPUT.TXT содержит последовательность неотрицательных целых чисел, не превышающих 
+// значения 100. Гарантируется, что во входных данных не более 100 чисел и 
+// среди них есть хотя бы одно число 0, 
+// перед которым идет как минимум 2 элемента.
+
+// Console.Clear();
+
+// void SumArray(int[] array) // процедура которая принимает массив
+// {
+//     int length = array.Length;
+//     if (length < 3) array = new int[3];
+//     if (length > 100) array = new int[100];
+//     int maxNum = 0;
+//     int maxNum2 = 0;
+//     for (int i = 0; i < array.Length; i++) //
+//     {
+//         array[i] = new Random().Next(0, 11);// генерируем случайные числа, и добавляем в массив
+//         if (maxNum < array[i]) maxNum = array[i]; // условия if пишу в одной строке
+//     }
+//     if (array[array.Length - 1] != 0 || array[array.Length - 1] != 10)
+//     {
+//         array[array.Length - 1] = 0;
+//     }
+//     for (int j = 0; j < array.Length; j++)
+//     {
+//         if (maxNum2 < array[j] && maxNum > array[j]) maxNum2 = array[j];
+//     }
+//     Console.WriteLine();
+//     Console.WriteLine($"[{string.Join(", ", array)}]"); // выводим массив через .Join
+//     Console.WriteLine($"Второе максимальное число равно: {maxNum2}");
+// }
+
+// Console.Write($"Введите количество чисел в массиве: ");
+// int n = Convert.ToInt32(Console.ReadLine());
+// int[] arrey = new int[n]; // пустой массив с n числами
+// SumArray(arrey);
