@@ -755,35 +755,37 @@
 
 //[3 7 22 2 78] -> 76
 
-//void InputArray(double[] array, ref double max, ref double min) // процедура void
-//{
+// void InputArray(double[] array, ref double max, ref double min) // процедура void
+// {
 
-//    for (int i = 0; i < array.Length; i++)
-//    {
-//        array[i] = new Random().Next(-100, 100);
-//        if (array[i] > max)
-//        {
-//            max = array[i];
-//        }
-//    }
-//    min = max;
-//    for (int i = 0; i < array.Length; i++)
-//{
-//if (array[i] < min)
-//{
-//            min = array[i];
-//}
-//}
-//}
+//     for (int i = 0; i < array.Length; i++)
+//     {
+//         array[i] = new Random().NextDouble() * (100 - 10) + 10; // .NextDoubl 
+//                                                                 (гененрирует числа от 0 до 1) что бы сгененирировать нужный дипазон
+//                                                                 нужно написать формулу .NextDoubl * (n - 10) + 10
+//         if (array[i] > max)
+//         {
+//             max = array[i];
+//         }
+//     }
+//     min = max;
+//     for (int i = 0; i < array.Length; i++)
+//     {
+//         if (array[i] < min)
+//         {
+//             min = array[i];
+//         }
+//     }
+// }
 
-//Console.Clear();
-//Console.Write($"Введите число которое задаст, количество чисел в массиве: ");
-//int number = Convert.ToInt32(Console.ReadLine());
-//double[] array = new double[number];
-//double max = 0;
-//double min = 100;
-//InputArray(array, ref max, ref min); // вызов метода + ссылка на счет(на массив ссылку можно не добовлять)
-//Console.WriteLine($"[{string.Join(" ", (array))}] -> {max - min}");
+// Console.Clear();
+// Console.Write($"Введите число которое задаст, количество чисел в массиве: ");
+// double number = Convert.ToDouble(Console.ReadLine());
+// double[] array = new double[number];
+// double max = 0;
+// double min = 100;
+// InputArray(array, ref max, ref min); // вызов метода + ссылка на счет(на массив ссылку можно не добовлять)
+// Console.WriteLine($"[{string.Join(" ", (array))}] -> {max - min}");
 
 // 3 лекция "методы"
 
@@ -1049,3 +1051,178 @@
 // int n = Convert.ToInt32(Console.ReadLine());
 // int[] arrey = new int[n]; // пустой массив с n числами
 // SumArray(arrey);
+
+//Задача 35: Задайте одномерный массив из 123 случайных чисел. 
+//Найдите количество элементов массива, значения которых лежат в отрезке [10,99].
+//Пример для массива из 5, а не 123 элементов. В своём решении сделайте для 123
+//[5, 18, 123, 6, 2] -> 1
+//[1, 2, 3, 6, 2] -> 0
+//[10, 11, 12, 13, 14] -> 5
+
+// Console.Clear();
+
+// void SumArray(int[] array) // процедура которая принимает массив
+// {
+//     int count = 0;
+//     for (int i = 0; i < array.Length; i++) //
+//     {
+//         array[i] = new Random().Next(0, 124);// генерируем случайные числа, и добавляем в массив
+//         if (array[i] > 10 && array[i] < 100) count++; // условия if пишу в одной строке
+//     }
+//     Console.WriteLine();
+//     Console.WriteLine($"[{string.Join(", ", array)}]"); // выводим массив через .Join
+//     Console.WriteLine($"количество элементов массива, значения которых лежат в отрезке [10,99]: {count}");
+// }
+
+// Console.Write($"Введите количество чисел в массиве: ");
+// int n = Convert.ToInt32(Console.ReadLine());
+// int[] arrey = new int[n]; // пустой массив с n числами
+// SumArray(arrey);
+
+// Задача 37: Найдите произведение пар чисел в одномерном массиве. 
+// Парой считаем первый и последний элемент, второй и предпоследний и т.д. 
+// Результат запишите в новом массиве.
+// [1 2 3 4 5] -> 5 8 3
+// [6 7 3 6] -> 36 21
+
+// void MultiArray(int[] x)
+// {
+//     int resault = 0;
+//     int[] y = new int[resault];
+//     if (x.Length % 2 == 0)
+//     {
+//         resault = x.Length / 2;
+//         y = new int[resault];
+//     }
+//     else
+//     {
+//         resault = x.Length / 2;
+//         y = new int[resault + 1];
+//     }
+//     for (int c = 0; c < x.Length; c++)
+//     {
+//         x[c] = new Random().Next(1, 10);
+//     }
+
+//     for (int i = 0, j = x.Length - 1; i <= resault; i++, j--)
+//     {
+//         y[i] = x[i] * x[j];
+//     }
+//     Console.WriteLine($"[{string.Join(", ", x)}]");
+//     Console.WriteLine($"[{string.Join(", ", y)}]");
+// }
+// Console.Write($"Введите количество чисел в массиве: ");
+// int n = Convert.ToInt32(Console.ReadLine());
+// int[] arrey = new int[n]; // пустой массив с n числами
+// MultiArray(arrey);
+
+// Console.Clear();
+// int[] array = Console.ReadLine().Split(" ").Select(x => int.Parse(x)).ToArray();
+// // Console.ReadLine() - вводим данные
+// // .Split(" ") - проверяет есть ли разделитель между элементами
+// // .Select(x => int.Parse(x)) - преобразует элемент строки к int
+// //( так же можно производить какое либо действие) Например .Select(x => x + 5) 
+// //(можно добавить после 1 .Select)
+// // .ToArray(); - преобразует в массив
+// Console.WriteLine($"[{string.Join(", ", array)}]");
+
+// foreach (int elem in array)
+//     // foreach() - выводит все элементы массива по очереди, как будто обращается к индексу
+//     Console.Write($"{elem} ");
+
+// Задача 39: Напишите программу, которая перевернёт одномерный массив 
+//(последний элемент будет на первом месте, а первый - на последнем и т.д.)
+//[1 2 3 4 5] -> [5 4 3 2 1]
+//[6 7 3 6] -> [6 3 7 6]
+
+// Console.Clear();
+// void Mirror(int[] arrya)
+// {
+//     for (int i = 0; i < arrya.Length; i++)
+//     {
+//         arrya[i] = new Random().Next(1, 100);
+//     }
+//     Console.WriteLine($"[{string.Join(", ", arrya)}]"); // до изменений
+//     for (int x = 0, j = arrya.Length - 1; x < arrya.Length / 2; x++, j--)
+//     {
+//         int count = arrya[x];
+//         arrya[x] = arrya[j];
+//         arrya[j] = count;
+//     }
+//     Console.WriteLine($"[{string.Join(", ", arrya)}]");
+// }
+
+// Console.Write($"Введите количество чисел в массиве: ");
+// int n = Convert.ToInt32(Console.ReadLine());
+// int[] arrey = new int[n]; // пустой массив с n числами
+// Mirror(arrey);
+
+
+//Задача 40: Напишите программу, которая принимает на вход три числа и проверяет, 
+//может ли существовать треугольник с сторонами такой длины.
+
+// Console.Clear();
+// void Triangle(int[] arrya)
+// {
+//     for (int i = 0; i < 3; i++)
+//     {
+//         arrya[i] = new Random().Next(1, 100);
+//     }
+//     Console.WriteLine($"[{string.Join(", ", arrya)}]"); // до изменений
+//     if (arrya[1] < arrya[0] + arrya[2] &&
+//         arrya[0] < arrya[1] + arrya[2] &&
+//         arrya[2] < arrya[0] + arrya[1])
+//         Console.WriteLine($"Да, такой треугольник возможен");
+//     else
+//         Console.WriteLine($"НЕТ, такой треугольник не возможен");
+// }
+// int[] arrey = new int[3]; // пустой массив с 3 числами
+// Triangle(arrey);
+
+//Задача 42: Напишите программу, которая будет преобразовывать десятичное число в двоичное.
+
+// Console.Clear();
+// void Binary(int num)
+// {
+//     int count = 0;
+//     int num1 = num;
+//     while (num >= 2) // первый цикл поиск количества цифр в массиве
+//     {
+//         int number = num % 2;
+//         num = num / 2;
+//         count++;
+//         Console.Write($"{num} ");
+//     }
+//     int[] arrey = new int[count + 1];   // задаем количество цифр в массиве + 1, 
+//                                         //так как первая цифрав двоичной системе считается отдельно
+//     int index = count;
+//     while (num1 >= 2)
+//     {
+//         int number = num1 % 2;
+//         num1 = num1 / 2;
+//         arrey[index] = number;
+//         index--;
+//     }
+//     arrey[0] = num1; // задаем 1 цифру в двоичной системе
+//     Console.WriteLine();
+//     Console.WriteLine($"{string.Join("", arrey)}");
+// }
+// Console.Write($"Введите число которое хотите преобразовать в двоичную систему: ");
+// int num = Convert.ToInt32(Console.ReadLine());
+// Binary(num);
+
+// второй способ получения двоичного числа
+
+// Console.Clear();
+// Console.Write("Введите число: ");
+// int n = Convert.ToInt32(Console.ReadLine());
+
+// string res = String.Empty; // пустая строка
+// while (n > 0)
+// {
+//     res = Convert.ToString(n % 2) + res;    // добавляем в пустую строку(так как res в 
+//                                             //конца результат зеркален) если хотим сначала
+//                                             // не зеркально то можно написать +=
+//     n /= 2; // счетчик
+// }
+// Console.WriteLine(res);
