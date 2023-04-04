@@ -350,21 +350,21 @@
 // Последовательность Фибоначчи – это последовательность 
 // натуральных чисел, где каждое последующее число является суммой двух предыдущих
 
-//Console.Clear();
+// Console.Clear();
 
-//int a = 1;
-//int b = 0;
-//int c = 0;
-//Console.Write("Введите желаемую продолжительность последовательности: ");
-//int number = Convert.ToInt32(Console.ReadLine());
-//for (int i = 0; i < number; i++)
-//{
-//    c = b;
-//    b = b + a;
-//    a = c;
-//    Console.Write($"{b}, "); // выводим последовательность
-//}
-
+// double a = 1;
+// double b = 0;
+// double c = 0;
+// Console.Write("Введите желаемую продолжительность последовательности: ");
+// double number = Convert.ToDouble(Console.ReadLine());
+// for (int i = 0; i < number; i++)
+// {
+//     c = b;
+//     b = b + a;
+//     a = c;
+//     Console.Write($"{b}, "); // выводим последовательность
+// }
+// Console.WriteLine();
 // 15.6 Задача из семинара
 
 //15.61 Напишите программу которая генерирует рандомное число в диапазоне от [10, 99], 
@@ -1226,3 +1226,59 @@
 //     n /= 2; // счетчик
 // }
 // Console.WriteLine(res);
+
+//Задача 45: Напишите программу, 
+//которая будет создавать копию заданного массива с помощью поэлементного копирования.
+
+// Console.Clear();
+// void Mirror(int[] arrya, int[] arreyB) // добавляем 2 массива из одного будем копировать в другой
+// {
+//     for (int i = 0; i < arrya.Length; i++)
+//     {
+//         arrya[i] = new Random().Next(1, 100); // генерируем случайные числа от 1 до 99 для 1 массива
+//     } // вместо гениратора можем сами ввести изначально цифры например: {1, 2, 3, 4}
+//     Console.WriteLine($"[{string.Join(", ", arrya)}]"); // до изменений вывод
+//     for (int x = 0; x < arrya.Length; x++)
+//     {
+//         arreyB[x] = arrya[x]; // из первого по индексу копируем элемент во второй массив
+//     }
+//     Console.WriteLine($"[{string.Join(", ", arreyB)}]"); //копия вывода результата
+// }
+
+// Console.Write($"Введите количество чисел в массиве: ");
+// int n = Convert.ToInt32(Console.ReadLine());
+// int[] arreyA = new int[n]; // пустой массив с n числами
+// int[] arreyB = new int[n];
+// Mirror(arreyA, arreyB);
+
+// arreyA[0] = -5; // изменяем 1 элемент для проверки
+// Console.WriteLine($"Вывод после изменений ");
+// Console.WriteLine($"[{string.Join(", ", arreyA)}]");
+// Console.WriteLine($"[{string.Join(", ", arreyB)}]");
+
+// Лекция 4 .. Двухмерные массивы и рекурсия
+Console.Clear();
+
+// string[,] table = new string[2, 3]; // создание 2-х мерного массива , 
+//                                     //- запятая нужна для того что бы интарпритатор понял что тут 2 - х мерный массив
+//                                     // [2, 3] - 2 - две строки, 3 - три столбца
+// table[1, 2] = "слово"; // указываем индекс через [] где 1 - это 0 элемент - 2  столбца
+
+// for (int rows = 0; rows < 2; rows++)
+// {
+//     for (int columns = 0; columns < 3; columns++)
+//     {
+//         Console.WriteLine($"|_{table[rows, columns]}_|");
+//     }
+// }
+
+int[,] matrix = new int[3, 4];
+
+for (int rows = 0; rows < matrix.GetLength(0); rows++) // matrix.GetLength(0) - обращается к строкам (3)
+{
+    for (int columns = 0; columns < matrix.GetLength(1); columns++) //GetLength(1) - обращается к столбцам (4)
+    {
+        Console.Write($"_|_{matrix[rows, columns]}_|_"); // для вывода первой строки 1-4 столбца
+    }
+    Console.WriteLine(); // пробел для красивого вывода 2 строка и так далее
+}
