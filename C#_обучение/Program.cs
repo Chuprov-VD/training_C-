@@ -1257,7 +1257,7 @@
 // Console.WriteLine($"[{string.Join(", ", arreyB)}]");
 
 // Лекция 4 .. Двухмерные массивы и рекурсия
-Console.Clear();
+//Console.Clear();
 
 // string[,] table = new string[2, 3]; // создание 2-х мерного массива , 
 //                                     //- запятая нужна для того что бы интарпритатор понял что тут 2 - х мерный массив
@@ -1272,13 +1272,486 @@ Console.Clear();
 //     }
 // }
 
-int[,] matrix = new int[3, 4];
+// int[,] matrix = new int[5, 14];
 
-for (int rows = 0; rows < matrix.GetLength(0); rows++) // matrix.GetLength(0) - обращается к строкам (3)
+// for (int rows = 0; rows < matrix.GetLength(0); rows++) // matrix.GetLength(0) - обращается к количесвту строк
+// {
+//     for (int columns = 0; columns < matrix.GetLength(1); columns++) //GetLength(1) - обращается к количеству столбцов 
+//     {
+//         Console.Write($"(_{matrix[rows, columns]}_)"); // для вывода строки столбца
+//     }
+//     Console.WriteLine(); // пробел для красивого вывода 2 строки и так далее
+// }
+
+// рекурсиа
+// Console.Clear();
+// void Main(string a = "1", string b = "2", string c = "3", int count = 7)
+// {
+//     int f = 1;
+//     Console.WriteLine($"{a} ->> {b} | {f++}");
+//     Console.Write($"");
+//     if (count > 1) Main(b, c, c, count - 1);
+//     {
+//         Console.Write($"{a} ->> {b} <!;");
+//     }
+// }
+// Main();
+
+// Массив
+
+// Console.Clear();
+
+// void PrintArry(int[,] matr) //(метод для вывода матрицы)
+// {
+//     for (int rows = 0; rows < matr.GetLength(0); rows++) // matrix.GetLength(0) - обращается к количесвту строк
+//     {
+//         for (int columns = 0; columns < matr.GetLength(1); columns++) //GetLength(1) - обращается к количеству столбцов 
+//         {
+//             Console.Write($"{matr[rows, columns]} "); // для вывода строки столбца
+//         }
+//         Console.WriteLine(); // пробел для красивого вывода 2 строки и так далее
+//     }
+// }
+
+
+// void FillArray(int[,] matr)
+// {
+//     for (int rows = 0; rows < matr.GetLength(0); rows++) // matrix.GetLength(0) - обращается к количесвту строк
+//     {
+//         for (int columns = 0; columns < matr.GetLength(1); columns++) //GetLength(1) - обращается к количеству столбцов 
+//         {
+//             matr[rows, columns] = new Random().Next(1, 10);
+//         }
+//     }
+// }
+
+// int[,] matrix = new int[5, 5];
+// FillArray(matrix);
+// PrintArry(matrix);
+
+// массив для вывода в терминал картинки
+
+// Console.Clear();
+// int[,] picture = new int[,]
+// {
+//     { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+//     { 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+//     { 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0 },
+//     { 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0 },
+//     { 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0 },
+//     { 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0 },
+//     { 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0 },
+//     { 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0 },
+//     { 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0 },
+//     { 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0 },
+//     { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 },
+
+// };
+// void PrintPic(int[,] pic) // метод для вывода картинки
+// {
+//     for (int rows = 0; rows < pic.GetLength(0); rows++)
+//     {
+//         for (int columns = 0; columns < pic.GetLength(1); columns++) //GetLength(1) - обращается к количеству столбцов 
+//         {
+//             if (pic[rows, columns] == 0) Console.Write(" ");
+//             else Console.Write("+");
+//         }
+//         Console.WriteLine();
+//     }
+
+// }
+// // для закраски используем рекурсию (процедура которая вызывает саму себя)
+// void FillPic(int row, int col)// определяем позицию для закраски
+// {
+//     if (picture[row, col] == 0)
+//     {
+//         picture[row, col] = 1;
+//         FillPic(row - 1, col); // проверяем закрашен ли элемент сверху
+//         FillPic(row, col - 1); // слева
+//         FillPic(row + 1, col); // снизу
+//         FillPic(row, col + 1); // справа
+//     }
+// }
+
+// PrintPic(picture); // печать до закраски
+// FillPic(2, 11);
+// PrintPic(picture); // печать после
+
+// int Factoryal(int n)
+// {
+//     if (n == 1) return 1; // 1! = 1, 0! = 1
+//     else return n * Factoryal(n - 1);
+// }
+
+
+// Console.Clear();
+// Console.Write("Ввыедите число для поиска факториала: ");
+// int num = Convert.ToInt32(Console.ReadLine());
+// Factoryal(num);
+// Console.WriteLine($"Факториал {num}! = {Factoryal(num)}");
+
+// 7 семинар + ДЗ
+
+//Задача 46: Задайте двумерный массив размером m×n, заполненный случайными целыми числами.
+
+// void Matrix(int[,] matr)
+// {
+//     for (int i = 0; i < matr.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < matr.GetLength(1); j++)
+//         {
+//             matr[i, j] = new Random().Next(1, 10);
+//             Console.Write($"{matr[i, j]} ");
+//         }
+//         Console.WriteLine();
+//     }
+// }
+
+// Console.Clear();
+// Console.WriteLine("Введите количество строк: ");
+// int m = Convert.ToInt32(Console.ReadLine());
+// Console.WriteLine("Введите количество столбцов: ");
+// int n = Convert.ToInt32(Console.ReadLine());
+// // //int[] size = Console.ReadLine().Split(" ").Select(x => int.Parse(x)).ToArray(); // можно так 
+// // //ввести данные размера матрицы
+// int[,] matr = new int[m, n];
+// Matrix(matr);
+
+// Задача 48: Задайте двумерный массив размера m на n, каждый элемент в массиве находится 
+//по формуле: Aₘₙ = m+n. Выведите полученный массив на экран.
+// m = 3, n = 4.
+// 0 1 2 3
+// 1 2 3 4
+// 2 3 4 5
+
+// void Matrix(int[,] matr)
+// {
+//     for (int i = 0; i < matr.GetLength(0); i++) // строка
+//     {
+//         for (int j = 0; j < matr.GetLength(1); j++) // столб
+//         {
+//             matr[i, j] = i + j;
+//             Console.Write($"{matr[i, j]} ");
+//         }
+//         Console.WriteLine();
+//     }
+// }
+
+// Console.Clear();
+// Console.WriteLine("Введите количество строк: ");
+// int m = Convert.ToInt32(Console.ReadLine());
+// Console.WriteLine("Введите количество столбцов: ");
+// int n = Convert.ToInt32(Console.ReadLine());
+// // //int[] size = Console.ReadLine().Split(" ").Select(x => int.Parse(x)).ToArray(); // можно так 
+// // //ввести данные размера матрицы
+// int[,] matr = new int[m, n];
+// Matrix(matr);
+
+//Задача 47. Задайте двумерный массив размером m×n, заполненный случайными вещественными числами.
+
+// Console.Clear();
+
+// void PrintArry(double[,] matr) //(метод для вывода матрицы)
+// {
+//     for (int rows = 0; rows < matr.GetLength(0); rows++) // matrix.GetLength(0) - обращается к количесвту строк
+//     {
+//         for (int columns = 0; columns < matr.GetLength(1); columns++) //GetLength(1) - обращается к количеству столбцов 
+//         {
+//             Console.Write($"{matr[rows, columns]} "); // для вывода строки столбца
+//         }
+//         Console.WriteLine(); // пробел для красивого вывода 2 строки и так далее
+//     }
+// }
+
+// void FillArray(double[,] matr)
+// {
+//     for (int rows = 0; rows < matr.GetLength(0); rows++) // matrix.GetLength(0) - обращается к количесвту строк
+//     {
+//         for (int columns = 0; columns < matr.GetLength(1); columns++) //GetLength(1) - обращается к количеству столбцов 
+//         {
+//             int num = new Random().Next(-9, 10);
+//             matr[rows, columns] = Math.Round(new Random().NextDouble() * num, 2);
+//         }
+//     }
+// }
+
+// double[,] matrix = new double[3, 4];
+// FillArray(matrix);
+// PrintArry(matrix);
+
+// задача 49. Задайте двумерный массив. Найдите элементы, 
+//у которых оба индекса чётные, и замените эти элементы на их квадраты.
+
+// void Matrix(int[,] matr)
+// {
+//     for (int i = 0; i < matr.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < matr.GetLength(1); j++)
+//         {
+//             matr[i, j] = new Random().Next(1, 10);
+
+//             if (i % 2 == 0 && j % 2 == 0 && i > 0 && j > 0)
+//             {
+//                 matr[i, j] = Convert.ToInt32(Math.Pow(matr[i, j], 2));
+//             }
+//             Console.Write($"{matr[i, j]} \t"); // \t - дает отступ
+
+//         }
+//         Console.WriteLine();
+//     }
+// }
+
+// Console.Clear();
+// Console.WriteLine("Введите количество строк: ");
+// int m = Convert.ToInt32(Console.ReadLine());
+// Console.WriteLine("Введите количество столбцов: ");
+// int n = Convert.ToInt32(Console.ReadLine());
+// //int[] size = Console.ReadLine().Split(" ").Select(x => int.Parse(x)).ToArray(); // можно так 
+// //ввести данные размера матрицы
+// int[,] matr = new int[m, n];
+// Matrix(matr);
+
+// Задача 50. Напишите программу, которая на вход принимает позиции элемента в двумерном массиве, 
+// и возвращает значение этого элемента или же указание, что такого элемента нет.
+// Например, задан массив:
+
+// 1 4 7 2
+// 5 9 2 3
+// 8 4 2 4
+// 17 -> такого числа в массиве нет
+
+// Console.Clear();
+
+// void PrintArry(int[,] matr, int num, int flag) //(метод для вывода матрицы)
+// {
+//     for (int rows = 0; rows < matr.GetLength(0); rows++) // matrix.GetLength(0) - обращается к количесвту строк
+//     {
+//         for (int columns = 0; columns < matr.GetLength(1); columns++) //GetLength(1) - обращается к количеству столбцов 
+//         {
+//             Console.Write($"{matr[rows, columns]} "); // для вывода строки столбца
+//             if (matr[rows, columns] == num) flag++;
+//         }
+//         Console.WriteLine(); // пробел для красивого вывода 2 строки и так далее
+//     }
+//     if (flag == 0) Console.WriteLine($"{num} -> такого числа в массиве нет");
+//     else Console.WriteLine($"{num} -> такое число в массиве есть, оно повторяется {flag} раз");
+// }
+
+// void FillArray(int[,] matr)
+// {
+//     for (int rows = 0; rows < matr.GetLength(0); rows++) // matrix.GetLength(0) - обращается к количесвту строк
+//     {
+//         for (int columns = 0; columns < matr.GetLength(1); columns++) //GetLength(1) - обращается к количеству столбцов 
+//         {
+//             matr[rows, columns] = new Random().Next(1, 30);
+//         }
+//     }
+// }
+
+// int[,] matrix = new int[3, 4];
+// Console.Write("Ввыедите число для поиска: ");
+// int num = Convert.ToInt32(Console.ReadLine());
+// int flag = 0;
+// FillArray(matrix);
+// PrintArry(matrix, num, flag);
+
+//Задача 51: Задайте двумерный массив. Найдите сумму элементов, находящихся 
+//на главной диагонали (с индексами (0,0); (1;1) и т.д.
+//Например, задан массив:
+// 1 4 7 2
+// 5 9 2 3
+// 8 4 2 4
+// Сумма элементов главной диагонали: 1+9+2 = 12
+
+// void Matrix(int[,] matr)
+// {
+//     int count = 0;
+//     for (int i = 0; i < matr.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < matr.GetLength(1); j++)
+//         {
+//             matr[i, j] = new Random().Next(1, 10);
+
+//             if (i == j)
+//             {
+//                 count = matr[i, j] + count;
+//             }
+//             Console.Write($"{matr[i, j]} \t"); // \t - дает отступ
+
+//         }
+//         Console.WriteLine();
+//     }
+//     Console.WriteLine($"сумма цифр главной диагонали равна = {count} \t"); // \t - дает отступ
+// }
+
+// Console.Clear();
+// Console.WriteLine("Введите количество строк: ");
+// int m = Convert.ToInt32(Console.ReadLine());
+// Console.WriteLine("Введите количество столбцов: ");
+// int n = Convert.ToInt32(Console.ReadLine());
+// //int[] size = Console.ReadLine().Split(" ").Select(x => int.Parse(x)).ToArray(); // можно так 
+// //ввести данные размера матрицы
+// int[,] matr = new int[m, n];
+// Matrix(matr);
+
+// Задача 52. Задайте двумерный массив из целых чисел. 
+// Найдите среднее арифметическое элементов в каждом столбце.
+// Например, задан массив:
+// 1 4 7 2
+// 5 9 2 3
+// 8 4 2 4
+// Среднее арифметическое каждого столбца: 4,6; 5,6; 3,6; 3
+
+// void FillArray(int[,] matr, int line, double[] array)
+// {
+//     for (int columns = 0; columns < matr.GetLength(1); columns++) // matrix.GetLength(0) - обращается к количесвту строк
+//     {
+//         double num = 0;
+//         for (int rows = 0; rows < matr.GetLength(0); rows++) //GetLength(1) - обращается к количеству столбцов 
+//         {
+//             matr[rows, columns] = new Random().Next(1, 10);
+//             num = matr[rows, columns] + num;
+//         }
+//         array[columns] = Math.Round(num / line, 1);
+//     }
+//     Console.WriteLine($"Среднее арифметическое каждого столбца: {string.Join("; ", array)}; {line}");
+// }
+// void PrintArry(int[,] matr) //(метод для вывода матрицы)
+// {
+//     for (int rows = 0; rows < matr.GetLength(0); rows++) // matrix.GetLength(0) - обращается к количесвту строк
+//     {
+//         for (int columns = 0; columns < matr.GetLength(1); columns++) //GetLength(1) - обращается к количеству столбцов 
+//         {
+//             Console.Write($"{matr[rows, columns]} "); // для вывода строки столбца
+//         }
+//         Console.WriteLine(); // пробел для красивого вывода 2 строки и так далее
+//     }
+// }
+
+// Console.Clear();
+// Console.Write("Введите количество строк: ");
+// int rows = Convert.ToInt32(Console.ReadLine());
+// Console.Write("Введите количество столбцов: ");
+// int columns = Convert.ToInt32(Console.ReadLine());
+// int[,] matrix = new int[rows, columns];
+// double[] array = new double[columns];
+
+// FillArray(matrix, rows, array);
+// PrintArry(matrix);
+
+//Задача 53 Задайте двухмерный массив. Напишите программу, которая поменяет местами 
+//первую и последнюю строки массива.
+
+// void Matrix(int[,] matr) // создание массива
+// {
+//     for (int i = 0; i < matr.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < matr.GetLength(1); j++)
+//         {
+//             matr[i, j] = new Random().Next(1, 10);
+//         }
+//     }
+// }
+
+// void Uturn(int[,] matr) // обмен строками 1 и последняя
+// {
+//     int num = 0;
+//     for (int i = 0; i < 1; i++)
+//     {
+//         for (int j = 0; j < matr.GetLength(1); j++)
+//         {
+//             num = matr[matr.GetLength(0) - 1, j];
+//             matr[matr.GetLength(0) - 1, j] = matr[i, j];
+//             matr[i, j] = num;
+//         }
+//     }
+// }
+
+// void PrintUturn(int[,] matr) // печать массива
+// {
+//     for (int i = 0; i < matr.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < matr.GetLength(1); j++)
+//         {
+//             Console.Write($"{matr[i, j]} \t"); // \t - дает отступ
+//         }
+//         Console.WriteLine();
+//     }
+// }
+
+// Console.Clear();
+// Console.WriteLine("Введите количество строк: ");
+// int m = Convert.ToInt32(Console.ReadLine());
+// Console.WriteLine("Введите количество столбцов: ");
+// int n = Convert.ToInt32(Console.ReadLine());
+// //int[] size = Console.ReadLine().Split(" ").Select(x => int.Parse(x)).ToArray(); // можно так 
+// //ввести данные размера матрицы
+// int[,] matr = new int[m, n];
+// Matrix(matr);
+// PrintUturn(matr);
+// Console.WriteLine();
+// Uturn(matr);
+// PrintUturn(matr);
+
+// Задача 55: Задайте двумерный массив. Напишите программу, которая заменяет строки на столбцы. В случае,
+// если это невозможно, программа должна вывести сообщение для пользователя.
+
+void Matrix(int[,] matr) // создание массива
 {
-    for (int columns = 0; columns < matrix.GetLength(1); columns++) //GetLength(1) - обращается к столбцам (4)
+    for (int i = 0; i < matr.GetLength(0); i++)
     {
-        Console.Write($"_|_{matrix[rows, columns]}_|_"); // для вывода первой строки 1-4 столбца
+        for (int j = 0; j < matr.GetLength(1); j++)
+        {
+            matr[i, j] = new Random().Next(1, 10);
+        }
     }
-    Console.WriteLine(); // пробел для красивого вывода 2 строка и так далее
 }
+
+void Uturn(int[,] matr) // столбцы меняем на строки
+{
+    int[] arrey = new int[matr.GetLength(0)];
+    int num = 0;
+    if (matr.GetLength(0) == matr.GetLength(1))
+    {
+        for (int i = 0; i < matr.GetLength(0); i++)
+        {
+            for (int j = 0; j < matr.GetLength(1); j++)
+            {
+                arrey[j] = matr[i, j];
+                matr[i, j] = matr[j, i];
+                matr[j, i] = arrey[j];
+            }
+            num++;
+        }
+    }
+    else
+    {
+        Console.WriteLine("Ошибка обмен невозможен");
+    }
+}
+
+void PrintMatrix(int[,] matr) // печать массива
+{
+    for (int i = 0; i < matr.GetLength(0); i++)
+    {
+        for (int j = 0; j < matr.GetLength(1); j++)
+        {
+            Console.Write($"{matr[i, j]} \t"); // \t - дает отступ
+        }
+        Console.WriteLine();
+    }
+}
+
+Console.Clear();
+Console.WriteLine("Введите количество строк: ");
+int m = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Введите количество столбцов: ");
+int n = Convert.ToInt32(Console.ReadLine());
+//int[] size = Console.ReadLine().Split(" ").Select(x => int.Parse(x)).ToArray(); // можно так 
+//ввести данные размера матрицы
+int[,] matr = new int[m, n];
+Matrix(matr);
+PrintMatrix(matr);
+Console.WriteLine();
+Uturn(matr);
+PrintMatrix(matr);
