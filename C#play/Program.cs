@@ -1,8 +1,8 @@
 ﻿// Игра камень, ножницы, бумага
 
-void Account(int num, int num1) // создание массива
+void Account(int num, int num1)
 {
-    void PrintSameResault(int num, int num1)
+    void PrintSameResault(int num, int num1) // одинаковый результат
     {
         Console.WriteLine("Вы выбрали с компьютером одинаково");
         Console.WriteLine("Если хотите попробовать снова введите 1, если выйти то другое число");
@@ -14,7 +14,7 @@ void Account(int num, int num1) // создание массива
         }
     }
 
-    void PrintVictoryResault(int num, int num1)
+    void PrintVictoryResault(int num, int num1) // победа
     {
         Console.WriteLine("Вы ПОБЕДИЛИ!");
         Console.WriteLine("Если хотите попробовать снова введите 1, если выйти то другое число");
@@ -26,7 +26,7 @@ void Account(int num, int num1) // создание массива
             Account(num, num1);
         }
     }
-    void PrintDefeatResault(int num, int num1)
+    void PrintDefeatResault(int num, int num1) // поражение
     {
         Console.WriteLine("Вы ПРОИГРАЛИ");
         Console.WriteLine("Если хотите попробовать снова введите 1, если выйти то другое число");
@@ -89,6 +89,4 @@ void Account(int num, int num1) // создание массива
 Console.Clear();
 int num = 0;
 int numOpp = 0;
-//int[] size = Console.ReadLine().Split(" ").Select(x => int.Parse(x)).ToArray(); // можно так 
-//ввести данные размера матрицы
 Account(num, numOpp);
