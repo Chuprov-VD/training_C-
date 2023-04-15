@@ -4,23 +4,23 @@
 // // // N = 5 -> "5, 4, 3, 2, 1"
 // // // N = 8 -> "8, 7, 6, 5, 4, 3, 2, 1"
 
-// void NumNatur(int n)
-// {
-//     if (n > 0)
-//     {
-//         Console.Write($"{n}");
-//         if (n > 1) Console.Write(", ");
-//         n--;
-//         NumNatur(n);
-//     }
-//     else Console.WriteLine();
-// }
+void NumNatur(int n)
+{
+    if (n > 0)
+    {
+        Console.Write($"{n}");
+        if (n > 1) Console.Write(", ");
+        n--;
+        NumNatur(n);
+    }
+    else Console.WriteLine();
+}
 
-// Console.Clear();
-// Console.WriteLine("Введите натуральное число последовательность которой хотите получить от N до 1: ");
-// int num = Convert.ToInt32(Console.ReadLine());
-// Console.Write($"N = {num} -> ");
-// NumNatur(num);
+Console.Clear();
+Console.WriteLine("Введите натуральное число последовательность которой хотите получить от N до 1: ");
+int num = Convert.ToInt32(Console.ReadLine());
+Console.Write($"N = {num} -> ");
+NumNatur(num);
 
 // Задача 66: Задайте значения M и N. Напишите программу, которая найдёт 
 // сумму натуральных элементов в промежутке от M до N.
@@ -65,23 +65,23 @@ NumNatur(numN, numM, sum);
 
 
 
-// int Ack(int m, int n)
-// {
-//     if (m == 0) return n + 1;
-//     else if (n == 0) return Ack(m - 1, 1);
-//     else return Ack(m - 1, Ack(m, n - 1));
-// }
+int Ack(int m, int n)
+{
+    if (m == 0) return n + 1;
+    else if (n == 0) return Ack(m - 1, 1);
+    else return Ack(m - 1, Ack(m, n - 1));
+}
 
-// int InputNumbers(string input)
-// {
-//     Console.Write(input);
-//     int output = Convert.ToInt32(Console.ReadLine());
-//     return output;
-// }
+int InputNumbers(string input)
+{
+    Console.Write(input);
+    int output = Convert.ToInt32(Console.ReadLine());
+    return output;
+}
 
-// int m = InputNumbers("Введите M: ");
-// int n = InputNumbers("Введите N: ");
+int m = InputNumbers("Введите M: ");
+int n = InputNumbers("Введите N: ");
 
-// int functionAkkerman = Ack(m, n);
+int functionAkkerman = Ack(m, n);
 
-// Console.WriteLine($"Функция Аккермана = {functionAkkerman} ");
+Console.WriteLine($"Функция Аккермана = {functionAkkerman} ");
