@@ -1696,62 +1696,698 @@
 // Задача 55: Задайте двумерный массив. Напишите программу, которая заменяет строки на столбцы. В случае,
 // если это невозможно, программа должна вывести сообщение для пользователя.
 
-void Matrix(int[,] matr) // создание массива
-{
-    for (int i = 0; i < matr.GetLength(0); i++)
-    {
-        for (int j = 0; j < matr.GetLength(1); j++)
-        {
-            matr[i, j] = new Random().Next(1, 10);
-        }
-    }
-}
+// void Matrix(int[,] matr) // создание массива
+// {
+//     for (int i = 0; i < matr.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < matr.GetLength(1); j++)
+//         {
+//             matr[i, j] = new Random().Next(1, 10);
+//         }
+//     }
+// }
 
-void Uturn(int[,] matr) // столбцы меняем на строки
-{
-    int[] arrey = new int[matr.GetLength(0)];
-    int num = 0;
-    if (matr.GetLength(0) == matr.GetLength(1))
-    {
-        for (int i = 0; i < matr.GetLength(0); i++)
-        {
-            for (int j = 0; j < matr.GetLength(1); j++)
-            {
-                arrey[j] = matr[i, j];
-                matr[i, j] = matr[j, i];
-                matr[j, i] = arrey[j];
-            }
-            num++;
-        }
-    }
-    else
-    {
-        Console.WriteLine("Ошибка обмен невозможен");
-    }
-}
+// void Uturn(int[,] matr) // столбцы меняем на строки
+// {
+//     int num = 0;
 
-void PrintMatrix(int[,] matr) // печать массива
-{
-    for (int i = 0; i < matr.GetLength(0); i++)
-    {
-        for (int j = 0; j < matr.GetLength(1); j++)
-        {
-            Console.Write($"{matr[i, j]} \t"); // \t - дает отступ
-        }
-        Console.WriteLine();
-    }
-}
+//     if (matr.GetLength(0) == matr.GetLength(1))
+//     {
+//         for (int i = 0; i < matr.GetLength(0); i++)
+//         {
+//             for (int j = 0; j < i; j++)
+//             {
+//                 num = matr[i, j];
+//                 matr[i, j] = matr[j, i];
+//                 matr[j, i] = num;
+//             }
+//         }
+//     }
+//     else
+//     {
+//         Console.WriteLine("Ошибка обмен невозможен");
+//     }
+// }
 
-Console.Clear();
-Console.WriteLine("Введите количество строк: ");
-int m = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("Введите количество столбцов: ");
-int n = Convert.ToInt32(Console.ReadLine());
-//int[] size = Console.ReadLine().Split(" ").Select(x => int.Parse(x)).ToArray(); // можно так 
-//ввести данные размера матрицы
-int[,] matr = new int[m, n];
-Matrix(matr);
-PrintMatrix(matr);
-Console.WriteLine();
-Uturn(matr);
-PrintMatrix(matr);
+// void PrintMatrix(int[,] matr) // печать массива
+// {
+//     for (int i = 0; i < matr.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < matr.GetLength(1); j++)
+//         {
+//             Console.Write($"{matr[i, j]} \t"); // \t - дает отступ
+//         }
+//         Console.WriteLine();
+//     }
+// }
+
+// Console.Clear();
+// Console.WriteLine("Введите количество строк: ");
+// int m = Convert.ToInt32(Console.ReadLine());
+// Console.WriteLine("Введите количество столбцов: ");
+// int n = Convert.ToInt32(Console.ReadLine());
+// //int[] size = Console.ReadLine().Split(" ").Select(x => int.Parse(x)).ToArray(); // можно так 
+// //ввести данные размера матрицы
+// int[,] matr = new int[m, n];
+// Matrix(matr);
+// PrintMatrix(matr);
+// Console.WriteLine();
+// Uturn(matr);
+// PrintMatrix(matr);
+
+// тетрис (не работает)
+// Console.Clear();
+
+// int[,] picture = new int[,]
+// {
+//     { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+//     { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+//     { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+//     { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+//     { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+//     { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+//     { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 }
+// };
+
+
+// void Figure(int[,] pic)
+// {
+//     {
+//         for (int rows = 0; rows < 2; rows++)
+//         {
+//             for (int columns = 3; columns < 6; columns++) //GetLength(1) - обращается к количеству столбцов 
+//             {
+//                 pic[rows, columns] = new Random().Next(0, 2);
+//             }
+//         }
+//     }
+//     for (int rows = 0; rows < pic.GetLength(0); rows++)
+//     {
+//         for (int columns = 0; columns < pic.GetLength(1); columns++) //GetLength(1) - обращается к количеству столбцов 
+//         {
+//             if (pic[rows, columns] == 0) Console.Write("0");
+//             else Console.Write("+");
+//         }
+//     }
+//     Console.WriteLine();
+// }
+
+// void Figure1(int[,] pic)
+// {
+//     Console.WriteLine("Куда хотите сдвинуть фигуру 1 - вправо; 2 - влево");
+//     int num = Convert.ToInt32(Console.ReadLine());
+
+//     for (int rows = 0; rows < pic.GetLength(0); rows++)
+//     {
+//         for (int columns = 0; columns < pic.GetLength(1); columns++) //GetLength(1) - обращается к количеству столбцов 
+//         {
+//             if (num == 1
+//             && pic[rows, columns] == 1
+//             && columns != pic.GetLength(1) - 2
+//             && rows != pic.GetLength(0) - 1)
+//             {
+//                 pic[rows, columns] = 0;
+//                 pic[rows + 1, columns + 1] = 1;
+
+//             }
+//             else if (num == 2
+//             && pic[rows, columns] == 1
+//             && columns != 0
+//             && rows != -2
+//             && rows != -1)
+//             {
+//                 pic[rows, columns] = 0;
+//                 pic[rows + 1, columns - 1] = 1;
+//             }
+//             else break;
+
+//         }
+//     }
+//     for (int rows = 0; rows < pic.GetLength(0); rows++)
+//     {
+//         for (int columns = 0; columns < pic.GetLength(1); columns++) //GetLength(1) - обращается к количеству столбцов 
+//         {
+//             if (pic[rows, columns] == 0) Console.Write("0");
+//             else Console.Write("+");
+//         }
+
+//     }
+//     Console.WriteLine();
+//     Figure1(pic);
+// }
+// Figure(picture);
+// Figure1(picture);
+
+// // для закраски используем рекурсию (процедура которая вызывает саму себя)
+// // void FillPic(int[,] pic)// определяем позицию для закраски
+// // {
+// //     if (picture[row, col] == 0)
+// //     {
+// //         picture[row, col] = 1;
+// //         FillPic(row - 1, col); // проверяем закрашен ли элемент сверху
+// //         FillPic(row, col - 1); // слева
+// //         FillPic(row + 1, col); // снизу
+// //         FillPic(row, col + 1); // справа
+// //     }
+// // }
+
+// // PrintPic(picture); // печать после
+
+// // Задача 57 Составте частотный словарь элементов двумерного массива. 
+// // Частотный словарь содержит информацию о том, сколько раз встречается элемент входных данных.
+
+// void Matrix(int[,] matr) // создание массива
+// {
+//     for (int i = 0; i < matr.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < matr.GetLength(1); j++)
+//         {
+//             matr[i, j] = new Random().Next(1, 10);
+//         }
+//     }
+// }
+
+// void Counting(int[,] matr) // преобразование в одномерный массив
+// {
+//     int[] num = new int[matr.GetLength(0) * matr.GetLength(0)];
+//     for (int i = 0; i < matr.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < matr.GetLength(1); j++)
+//         {
+//             num[i + j] = matr[i, j];
+//             Console.Write($"{num} ");
+//         }
+//     }
+// }
+
+// void PrintMatrix(int[,] matr) // печать массива
+// {
+//     for (int i = 0; i < matr.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < matr.GetLength(1); j++)
+//         {
+//             Console.Write($"{matr[i, j]} \t"); // \t - дает отступ
+//         }
+//         Console.WriteLine();
+//     }
+// }
+
+// Console.Clear();
+// Console.WriteLine("Введите количество строк: ");
+// int m = Convert.ToInt32(Console.ReadLine());
+// Console.WriteLine("Введите количество столбцов: ");
+// int n = Convert.ToInt32(Console.ReadLine());
+// //int[] size = Console.ReadLine().Split(" ").Select(x => int.Parse(x)).ToArray(); // можно так 
+// //ввести данные размера матрицы
+// int[,] matr = new int[m, n];
+// Matrix(matr);
+// PrintMatrix(matr);
+// Console.WriteLine();
+// Counting(matr);
+// PrintMatrix(matr);
+
+// Задача 54: Задайте двумерный массив. Напишите программу, 
+// //которая упорядочит по убыванию элементы каждой строки двумерного массива.
+// //Например, задан массив:
+// // 1 4 7 2
+// // 5 9 2 3
+// // 8 4 2 4
+// // В итоге получается вот такой массив:
+// // 7 4 2 1
+// // 9 5 3 2
+// // 8 4 4 2
+
+// void Matrix(int[,] matr) // создание массива
+// {
+//     for (int i = 0; i < matr.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < matr.GetLength(1); j++)
+//         {
+//             matr[i, j] = new Random().Next(1, 10);
+//         }
+//     }
+// }
+
+// void Counting(int[,] matr) // от большего к меньшему
+// {
+//     int num = 0;
+//     for (int i = 0; i < matr.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < matr.GetLength(1); j++)
+//         {
+//             if (j + 1 < matr.GetLength(1) && matr[i, j] < matr[i, j + 1])
+//             {
+//                 num = matr[i, j];
+//                 matr[i, j] = matr[i, j + 1];
+//                 matr[i, j + 1] = num;
+//                 j = 0;
+//             }
+//         }
+//     }
+// }
+
+// void PrintMatrix(int[,] matr) // печать массива
+// {
+//     for (int i = 0; i < matr.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < matr.GetLength(1); j++)
+//         {
+//             Console.Write($"{matr[i, j]} \t"); // \t - дает отступ
+//         }
+//         Console.WriteLine();
+//     }
+// }
+
+// Console.Clear();
+// Console.WriteLine("Введите количество строк: ");
+// int m = Convert.ToInt32(Console.ReadLine());
+// Console.WriteLine("Введите количество столбцов: ");
+// int n = Convert.ToInt32(Console.ReadLine());
+// //int[] size = Console.ReadLine().Split(" ").Select(x => int.Parse(x)).ToArray(); // можно так 
+// //ввести данные размера матрицы
+// int[,] matr = new int[m, n];
+// Matrix(matr);
+// PrintMatrix(matr);
+// Console.WriteLine();
+// Counting(matr);
+// PrintMatrix(matr);
+
+// // Задача 56: Задайте прямоугольный двумерный массив. Напишите программу, которая 
+// // будет находить строку с наименьшей суммой элементов.
+
+// // Например, задан массив:
+
+// // 1 4 7 2
+
+// // 5 9 2 3
+
+// // 8 4 2 4
+
+// // 5 2 6 7
+
+// // Программа считает сумму элементов в каждой строке и выдаёт номер строки с 
+// // наименьшей суммой элементов: 1 строка
+
+// void Matrix(int[,] matr) // создание массива
+// {
+//     for (int i = 0; i < matr.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < matr.GetLength(1); j++)
+//         {
+//             matr[i, j] = new Random().Next(1, 10);
+//         }
+//     }
+// }
+
+// void Counting(int[,] matr) // от большего к меньшему
+// {
+//     int num = 0;
+//     int numMin = 999999999;
+//     int count = 0;
+//     for (int i = 0; i < matr.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < matr.GetLength(1); j++)
+//         {
+
+//             num = matr[i, j] + num;
+
+//         }
+//         if (num < numMin)
+//         {
+//             numMin = num;
+//             count = i + 1;
+//         }
+//         num = 0;
+//     }
+//     Console.WriteLine($" c наименьшой суммой элементов: {count} строка");
+// }
+
+// void PrintMatrix(int[,] matr) // печать массива
+// {
+//     for (int i = 0; i < matr.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < matr.GetLength(1); j++)
+//         {
+//             Console.Write($"{matr[i, j]} \t"); // \t - дает отступ
+//         }
+//         Console.WriteLine();
+//     }
+// }
+
+// Console.Clear();
+// Console.WriteLine("Введите количество строк: ");
+// int m = Convert.ToInt32(Console.ReadLine());
+// Console.WriteLine("Введите количество столбцов: ");
+// int n = Convert.ToInt32(Console.ReadLine());
+// //int[] size = Console.ReadLine().Split(" ").Select(x => int.Parse(x)).ToArray(); // можно так 
+// //ввести данные размера матрицы
+// int[,] matr = new int[m, n];
+// Matrix(matr);
+// PrintMatrix(matr);
+// Console.WriteLine();
+// Counting(matr);
+
+// // Задача 58: Задайте две матрицы. Напишите программу, 
+// // которая будет находить произведение двух матриц.
+// // Например, даны 2 матрицы:
+// // 2 4 | 3 4 строки * столбцы
+// // 3 2 | 3 3
+// // Результирующая матрица будет:
+// // 18 20
+// // 15 18
+
+// void Matrix(int[,] matr1, int[,] matr2) // создание матриц
+// {
+//     for (int i = 0; i < matr1.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < matr1.GetLength(1); j++)
+//         {
+//             matr1[i, j] = new Random().Next(1, 10);
+//             matr2[i, j] = new Random().Next(1, 10);
+//         }
+//     }
+// }
+
+// void Multi(int[,] matr1, int[,] matr2, int[,] resault) // от большего к меньшему
+// {
+//     for (int i = 0; i < matr1.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < matr1.GetLength(1); j++)
+//         {
+//             int sum = 0;
+//             for (int k = 0; k < matr1.GetLength(1); k++)
+//             {
+//                 sum = matr1[i, k] * matr2[k, j] + sum;
+//             }
+//             resault[i, j] = sum;
+//         }
+//     }
+// }
+
+// void PrintMatrix(int[,] matr) // печать массива
+// {
+//     for (int i = 0; i < matr.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < matr.GetLength(1); j++)
+//         {
+//             Console.Write($"{matr[i, j]} \t"); // \t - дает отступ
+//         }
+//         Console.WriteLine();
+//     }
+// }
+
+// Console.Clear();
+// Console.WriteLine("Введите количество строк: ");
+// int m = Convert.ToInt32(Console.ReadLine());
+// Console.WriteLine("Введите количество столбцов: ");
+// int n = Convert.ToInt32(Console.ReadLine());
+// //int[] size = Console.ReadLine().Split(" ").Select(x => int.Parse(x)).ToArray(); // можно так 
+// //ввести данные размера матрицы
+// int[,] matr1 = new int[m, n];
+// int[,] matr2 = new int[m, n];
+// int[,] resault = new int[m, n];
+// Matrix(matr1, matr2);
+// PrintMatrix(matr1);
+// Console.WriteLine();
+// PrintMatrix(matr2);
+// Console.WriteLine("Произведение 2-х матриц равно: ");
+// Multi(matr1, matr2, resault);
+// PrintMatrix(resault);
+
+
+// Задача 60. ...Сформируйте трёхмерный массив из неповторяющихся двузначных чисел. 
+// Напишите программу, которая будет построчно выводить массив,
+// добавляя индексы каждого элемента.
+// Массив размером 2 x 2 x 2
+// 66(0,0,0) 25(0, 1, 0)
+// 34(1, 0, 0) 41(1, 1, 0)
+// 27(0, 0, 1) 90(0, 1, 1)
+// 26(1, 0, 1) 55(1, 1, 1)
+
+// Console.Clear();
+// void FillMat(int[,,] mat)
+// {
+//     int count = 10;
+//     for (int i = 0; i < mat.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < mat.GetLength(1); j++)
+//         {
+//             for (int k = 0; k < mat.GetLength(2); k++)
+//             {
+//                 mat[k, i, j] += count;
+//                 count += 3;
+//             }
+//         }
+//     }
+// }
+
+// void PrintIndex(int[,,] mat)
+// {
+//     for (int i = 0; i < mat.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < mat.GetLength(1); j++)
+//         {
+//             Console.WriteLine();
+//             for (int k = 0; k < mat.GetLength(2); k++)
+//             {
+//                 Console.Write($"{mat[i, j, k]}({i},{j},{k}) ");
+//             }
+//         }
+//     }
+// }
+
+
+
+// int[,,] matrix3D = new int[2, 2, 2];
+// FillMat(matrix3D);
+// PrintIndex(matrix3D);
+// Console.WriteLine();
+
+// // Задача 62. Напишите программу, которая заполнит спирально массив 4 на 4.
+// //Например, на выходе получается вот такой массив:
+// //01 02 03 04
+// //12 13 14 05
+// //11 16 15 06
+// //10 09 08 07
+
+// Console.Clear();
+// void FillMatrixSpiral(int[,] matrix, int n)
+// {
+//     int i = 0, j = 0;
+//     int value = 1;
+//     for (int e = 0; e < n * n; e++)
+//     {
+//         int k = 0;
+//         do { matrix[i, j++] = value++; } while (++k < n - 1);
+//         for (k = 0; k < n - 1; k++) matrix[i++, j] = value++;
+//         for (k = 0; k < n - 1; k++) matrix[i, j--] = value++;
+//         for (k = 0; k < n - 1; k++) matrix[i--, j] = value++;
+//         ++i; ++j;
+//         n = n < 2 ? 0 : n - 2;
+//     }
+// }
+
+
+// void PrintMatrix(int[,] matrix)
+// {
+//     for (int i = 0; i < matrix.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < matrix.GetLength(1); j++)
+//         {
+//             if (matrix[i, j] < 10)
+//             {
+//                 Console.Write("0" + matrix[i, j]);
+//                 Console.Write(" ");
+//             }
+//             else Console.Write(matrix[i, j] + " ");
+//         }
+//         Console.WriteLine();
+//     }
+// }
+
+// int len = 4;
+// int[,] table = new int[len, len];
+// FillMatrixSpiral(table, len);
+// PrintMatrix(table);
+
+// // Игра камень, ножницы, бумага
+
+// void Account(int num, int num1) // создание массива
+// {
+//     void PrintSameResault(int num, int num1)
+//     {
+//         Console.WriteLine("Вы выбрали с компьютером одинаково");
+//         Console.WriteLine("Если хотите попробовать снова введите 1, если выйти то другое число");
+//         num = Convert.ToInt32(Console.ReadLine());
+//         if (num == 1)
+//         {
+//             Console.WriteLine("Ура! Спасибо");
+//             Account(num, num1);
+//         }
+//     }
+
+//     void PrintVictoryResault(int num, int num1)
+//     {
+//         Console.WriteLine("Вы Победили!");
+//         Console.WriteLine("Если хотите попробовать снова введите 1, если выйти то другое число");
+//         num = Convert.ToInt32(Console.ReadLine());
+//         if (num == 1)
+//         {
+//             Console.WriteLine("Ура! Спасибо");
+//             Account(num, num1);
+//         }
+//     }
+//     void PrintDefeatResault(int num, int num1)
+//     {
+//         Console.WriteLine("Вы ПРОИГРАЛИ");
+//         Console.WriteLine("Если хотите попробовать снова введите 1, если выйти то другое число");
+//         num = Convert.ToInt32(Console.ReadLine());
+//         if (num == 1)
+//         {
+//             Console.WriteLine("Ура! Спасибо");
+//             Account(num, num1);
+//         }
+//     }
+
+//     Console.WriteLine("Введите цифру от 1 до 3. Где 1 - бумага, 2 - ножницы, 3 - камень: ");
+//     num = Convert.ToInt32(Console.ReadLine());
+//     num1 = Convert.ToInt32(new Random().Next(1, 4));
+
+//     if (num == num1)
+//     {
+//         PrintSameResault(num, num1);
+//     }
+//     if (num1 == 1 && num == 2)
+//     {
+//         Console.WriteLine("Вы выбрали ножницы, а компьютер бумагу");
+//         PrintVictoryResault(num, num1);
+
+//     }
+
+//     if (num1 == 3 && num == 2)
+//     {
+//         Console.WriteLine("Вы выбрали ножницы, а компьютер камень");
+//         PrintDefeatResault(num, num1);
+//     }
+//     if (num1 == 1 && num == 3)
+//     {
+//         Console.WriteLine("Вы выбрали камень, а компьютер бумагу");
+//         PrintDefeatResault(num, num1);
+//     }
+//     if (num1 == 2 && num == 3)
+//     {
+
+//         Console.WriteLine("Вы выбрали камень, а компьютер ножницы");
+//         PrintVictoryResault(num, num1);
+
+//     }
+//     if (num1 == 3 && num == 1)
+//     {
+
+//         Console.WriteLine("Вы выбрали бумагу, а компьютер камень");
+//         PrintVictoryResault(num, num1);
+
+//     }
+//     if (num1 == 2 && num == 1)
+//     {
+
+//         Console.WriteLine("Вы выбрали бумагу, а компьютер ножницы");
+//         PrintDefeatResault(num, num1);
+
+//     }
+// }
+
+// Console.Clear();
+// int num = 0;
+// int numOpp = 0;
+// //int[] size = Console.ReadLine().Split(" ").Select(x => int.Parse(x)).ToArray(); // можно так 
+// //ввести данные размера матрицы
+// Account(num, numOpp);
+
+// Задача 64: Задайте значение N. Напишите программу, которая выведет 
+// все натуральные числа в промежутке от N до 1. Выполнить с помощью рекурсии.
+
+// N = 5 -> "5, 4, 3, 2, 1"
+// N = 8 -> "8, 7, 6, 5, 4, 3, 2, 1"
+
+// void NumNatur(int n)
+// {
+//     if (n > 0)
+//     {
+//         Console.Write($"{n}");
+//         if (n > 1) Console.Write(", ");
+//         n--;
+//         NumNatur(n);
+//     }
+//     Console.WriteLine();
+// }
+
+// Console.Clear();
+// Console.WriteLine("Введите натуральное число последовательность которой хотите получить от N до 1: ");
+// int num = Convert.ToInt32(Console.ReadLine());
+// Console.Write($"N = {num} -> ");
+// NumNatur(num);
+
+// Задача 66: Задайте значения M и N. Напишите программу, которая найдёт 
+// сумму натуральных элементов в промежутке от M до N.
+
+// M = 1; N = 15 -> 120
+// M = 4; N = 8. -> 30
+
+// void NumNatur(int n1, int n2, int sum)
+// {
+//     if (n1 == n2)
+//     {
+//         Console.WriteLine(sum + n1);
+//     }
+//     if (n1 > n2)
+//     {
+//         sum = n1 + sum;
+//         n1--;
+//         NumNatur(n1, n2, sum);
+//     }
+//     if (n1 < n2)
+//     {
+//         NumNatur(n2, n1, sum);
+//     }
+
+// }
+
+// Console.Clear();
+// Console.WriteLine("Введите натуральные числа сумму которых хотите получить от N до M: ");
+// Console.WriteLine();
+// Console.Write("Введите число N: ");
+// int numN = Convert.ToInt32(Console.ReadLine());
+// Console.Write("Введите число M: ");
+// int numM = Convert.ToInt32(Console.ReadLine());
+// Console.Write($"M = {numM}; N = {numN} -> ");
+// int sum = 0;
+// NumNatur(numN, numM, sum);
+
+// //Задача 68: Напишите программу вычисления функции Аккермана с помощью рекурсии.
+// //Даны два неотрицательных числа m и n.
+// //m = 2, n = 3 -> A(m,n) = 9
+// //m = 3, n = 2 -> A(m,n) = 29
+
+
+
+// int Ack(int m, int n)
+// {
+//     if (m == 0) return n + 1;
+//     else if (n == 0) return Ack(m - 1, 1);
+//     else return Ack(m - 1, Ack(m, n - 1));
+// }
+
+// int InputNumbers(string input)
+// {
+//     Console.Write(input);
+//     int output = Convert.ToInt32(Console.ReadLine());
+//     return output;
+// }
+
+// int m = InputNumbers("Введите M: ");
+// int n = InputNumbers("Введите N: ");
+
+// int functionAkkerman = Ack(m, n);
+
+// Console.WriteLine($"Функция Аккермана = {functionAkkerman} ");
