@@ -7,11 +7,22 @@
 * ### [“Russia”, “Denmark”, “Kazan”] → []
 ```mermaid
 flowchart TD
-    A[Christmas] -->|Get money| B(Go shopping)
-    B --> C{Let me think}
-    C -->|One| D[Laptop]
-    C -->|Two| E[iPhone]
-    C -->|Three| F[fa:fa-car Car]
+    A["num = int(input())
+    string[] array = new string[num]" ] 
+    --> B{"CreatStringArray, i = 0 
+    array.Length > i"}
+    B --> |YES| C["array[i] = input()"]
+    B --> |NO| D["array[], num
+    int count = 0;
+    int j = 0;"]
+    C -->|i++| B
+    D --> E{"i = 0; i < num"}
+    E -->|Yes| F["array[i].Length < 4"]
+    F -->|Yes, i++, count++ | G["count++"]
+    G -->|i++| E
+    F --> |"NO, i++"| E
+    E --> |NO| H["string[] arrayNew = new string[count];"]
+    H --> J{"w = 0; w < num"}
 ```
 
 
