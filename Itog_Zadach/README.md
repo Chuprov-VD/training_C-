@@ -6,7 +6,7 @@
 * ### [“1234”, “1567”, “-2”, “computer science”] → [“-2”]
 * ### [“Russia”, “Denmark”, “Kazan”] → []
 ```mermaid
-fowchart TD 
+flowchart TD 
     A([Beginning]) --> A1 
     A1[/"num = int(input())"/] --> 
     A2["string [array] = new string[num] 
