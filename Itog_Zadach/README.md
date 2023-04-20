@@ -7,10 +7,9 @@
 * ### [“Russia”, “Denmark”, “Kazan”] → []
 ```mermaid
 flowchart TD 
-    A([Beginning]) --> A1 
+     A([Beginning]) --> A1 
     A1[/"num = int(input())"/] --> 
-    A2["string [array] = new string[num] 
-    count = 0"] --> 
+    A2["string [array] = new string[num]"] --> 
     B[["CreatStringArray 
     (array[], num)"]] 
     B --> B1{"for (i = 0;  
@@ -18,15 +17,21 @@ flowchart TD
     i++"} 
     B1 --> |YES| B2[/"array[i] = input()"/]  
     --> B1 
-    B1 --> |NO| C[["CheckStringArray 
-    (array[], num,  
-    count)"]] --> 
-    C1["j = 0"] --> 
-    C2{"for (i = 0;  
-    i < num);  
-    i++"} -->|YES| C3{"array[i].Length < 4"} -->  
+    B1 -->  |NO| B3(["END CreatStringArray"])
+     --> C[["CheckStringArray 
+    (array[], num)"]] --> 
+    C1["j = 0
+    count = 0"] --> 
+    C2{"for (w = 0;  
+    w < num);  
+    w++"} -->|YES| C3{"array[i].Length < 4"} -->  
     |YES| C4[count++] --> C2; 
     C3 --> |NO|C2;
+    C2 --> |NO| C5["string[] arrayNew = new string[count];"]  
+    --> D{"for (i = 0;  i < num);  
+    i++"} --> |YES| D1{"array[i].Length < 4"} --> D2["arrayNew[j] = 
+    array[i]; j++;"] --> D
+    D --> |NO|D5[Print array, arrayNew] --> D6(["END"]);
 ```
 
 
