@@ -6,23 +6,27 @@
 * ### [“1234”, “1567”, “-2”, “computer science”] → [“-2”]
 * ### [“Russia”, “Denmark”, “Kazan”] → []
 ```mermaid
-flowchart TD
-    A["num = int(input())
-    string[] array = new string[num]" ] 
-    --> B{"CreatStringArray, i = 0 
-    array.Length > i"}
-    B --> |YES| C["array[i] = input()"]
-    B --> |NO| D["array[], num
-    int count = 0;
-    int j = 0;"]
-    C -->|i++| B
-    D --> E{"i = 0; i < num"}
-    E -->|Yes| F["array[i].Length < 4"]
-    F -->|Yes, i++, count++ | G["count++"]
-    G -->|i++| E
-    F --> |"NO, i++"| E
-    E --> |NO| H["string[] arrayNew = new string[count];"]
-    H --> J{"w = 0; w < num"}
+owchart TD 
+    A([Beginning]) --> A1 
+    A1[/"num = int(input())"/] --> 
+    A2["string [array] = new string[num] 
+    count = 0"] --> 
+    B[["CreatStringArray 
+    (array[], num)"]] 
+    B --> B1{"for (i = 0;  
+    i < num);  
+    i++"} 
+    B1 --> |YES| B2[/"array[i] = input()"/]  
+    --> B1 
+    B1 --> |NO| C[["CheckStringArray 
+    (array[], num,  
+    count)"]] --> 
+    C1["j = 0"] --> 
+    C2{"for (i = 0;  
+    i < num);  
+    i++"} -->|YES| C3{"array[i].Length < 4"} -->  
+    |YES| C4[count++] --> C2; 
+    C3 --> |NO|C2;
 ```
 
 
